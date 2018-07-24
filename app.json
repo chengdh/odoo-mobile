@@ -1,4 +1,8 @@
 {
-  "name": "Wcloud",
-  "displayName": "Wcloud"
+  "expo": {
+    "sdkVersion": "24.0.0",
+    "name": "odoo mobile",
+    "slug": "odoo-mobile",
+    "privacy": "public"
+  }
 }
