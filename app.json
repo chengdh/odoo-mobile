@@ -1,8 +1,8 @@
 {
   "expo": {
     "sdkVersion": "24.0.0",
-    "name": "odoo mobile",
-    "slug": "odoo-mobile",
+    "name": "gooderp mobile",
+    "slug": "gooderp-mobile",
     "privacy": "public"
   }
 }

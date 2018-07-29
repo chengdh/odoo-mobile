@@ -1,5 +1,6 @@
+
 import React from 'react';
-import Setup from "./src/setup";
-export default function App() {
-    return <Setup />;
+import App from "./src/App";
+export default function ExpoApp() {
+    return <App />;
 };
