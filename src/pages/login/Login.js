@@ -99,7 +99,7 @@ export default class Login extends Component {
           jsonrpc: "2.0",
           method: "call",
           params: {
-            db: "qiyuan_db",
+            db: "test",
             login: this.state.username,
             password: this.state.password,
             context: {}
