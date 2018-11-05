@@ -1,6 +1,8 @@
+import React from "react";
+import Setup from "./src/boot/setup";
 
-import React from 'react';
-import App from "./src/App";
-export default function ExpoApp() {
-    return <App />;
-};
+export default class App extends React.Component {
+  render() {
+    return <Setup />;
+  }
+}

@@ -1,8 +1,8 @@
 import React from 'react'
 import { StackNavigator } from 'react-navigation'
 import Home from './pages/home/Home'
-import Authentication from './pages/authentication/Authentication'
-import Login from './pages/login/Login'
+import Authentication from './pages/authentication'
+import Login from './pages/login'
 
 export const HomeStack = StackNavigator({
     Authentication_Page: {

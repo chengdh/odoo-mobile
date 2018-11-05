@@ -35,19 +35,19 @@ export default class Authentication extends Component {
   }
 
   componentWillMount() {
-    this.keyboardDidShowListener = Keyboard.addListener(
-      "keyboardDidShow",
-      this._keyboardDidShow
-    );
-    this.keyboardDidHideListener = Keyboard.addListener(
-      "keyboardDidHide",
-      this._keyboardDidHide
-    );
+    // this.keyboardDidShowListener = Keyboard.addListener(
+    //   "keyboardDidShow",
+    //   this._keyboardDidShow
+    // );
+    // this.keyboardDidHideListener = Keyboard.addListener(
+    //   "keyboardDidHide",
+    //   this._keyboardDidHide
+    // );
   }
 
   componentWillUnmount() {
-    this.keyboardDidShowListener.remove();
-    this.keyboardDidHideListener.remove();
+    // this.keyboardDidShowListener.remove();
+    // this.keyboardDidHideListener.remove();
   }
 
   componentDidMount() {
