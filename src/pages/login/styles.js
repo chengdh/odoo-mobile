@@ -16,6 +16,14 @@ export default {
     flexDirection: "row",
     alignSelf: "center"
   },
+  header: {
+    alignSelf: "center",
+    fontSize: 22,
+    padding: 10,
+    fontWeight: "bold",
+    color: "#FFF",
+    marginTop: 40
+  },
   logo: {
     flex: 1,
     resizeMode: "contain",

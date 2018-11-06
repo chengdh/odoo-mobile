@@ -1,23 +1,18 @@
-import React, { Component } from "react";
-import { Image, ImageBackground, Platform, StatusBar } from "react-native";
-import { connect } from "react-redux";
 import {
+  Button,
   Container,
   Content,
-  Text,
-  Item,
   Input,
-  Button,
-  // Icon,
-  View,
-  Left,
-  Right,
-  Toast,
-  Keyboard
+  Item,
+  Text,
+  View
 } from "native-base";
-import Icon from 'react-native-vector-icons/FontAwesome';
-import { Field, reduxForm,formValueSelector } from "redux-form";
-
+import React, { Component } from "react";
+import { ImageBackground, Platform, StatusBar } from "react-native";
+import Icon from "react-native-vector-icons/FontAwesome";
+import { connect } from "react-redux";
+import { Field, reduxForm } from "redux-form";
+import { login } from "./actions";
 import styles from "./styles";
 
 const bg = require("../../assets/images/bg.png");
@@ -29,7 +24,7 @@ const maxLength = max => value =>
 const maxLength15 = maxLength(15);
 const minLength = min => value =>
   value && value.length < min ? `最少${min}个字符` : undefined;
-const minLength8 = minLength(8);
+const minLength1 = minLength(1);
 const email = value =>
   value && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)
     ? "无效邮箱地址"
@@ -38,21 +33,39 @@ const alphaNumeric = value =>
   value && /[^a-zA-Z0-9 ]/i.test(value) ? "只允许输入汉字" : undefined;
 
 class LoginForm extends Component {
+  _submit = (vals, dispatch) => {
+    const { username, password, db } = vals;
+    const nav = this.props.navigation;
+    return dispatch(login(username, password, db, nav));
+  };
   renderInput({ input, label, type, meta: { touched, error, warning } }) {
+    function getIcon(fieldName) {
+      let iconName;
+      if (fieldName === "username") iconName = "user";
+      else if (fieldName === "password") iconname = "unlock";
+      else iconName = "database";
+      const icon = (
+        <Icon active size={20} name={iconName} style={{ color: "#fff" }} />
+      );
+      return icon;
+    }
+    function getPlaceholder(fieldName) {
+      let placeholder;
+      if (fieldName === "username") placeholder = "用户名";
+      else if (fieldName === "password") placeholder = "密码";
+      else placeholder = "数据库";
+      return placeholder;
+    }
+
     return (
       <View>
         <Item error={error && touched} rounded style={styles.inputGrp}>
-          <Icon
-            active
-            size={20}
-            name={input.name === "username" ? "user" : "unlock"}
-            style={{ color: "#fff" }}
-          />
+          {getIcon(input.name)}
           <Input
             ref={c => (this.textInput = c)}
             placeholderTextColor="#FFF"
             style={styles.input}
-            placeholder={input.name === "username" ? "用户名" : "密码"}
+            placeholder={getPlaceholder(input.name)}
             secureTextEntry={input.name === "password" ? true : false}
             {...input}
           />
@@ -76,68 +89,6 @@ class LoginForm extends Component {
     );
   }
 
-  login = (vals) => {
-    // if (this.state.userNameError || this.state.passwordError) {
-    // } else {
-    //   let db = this.state.username.substring(
-    //     this.state.username.lastIndexOf("@") + 1
-    //   );
-    //   this.setState({ ranDomId: Math.floor(Math.random() * 1000) + 1 });
-
-    //   let url =
-    //     "https://" + this.state.domainName + "/web/session/authenticate";
-
-    //   fetch(url, {
-    //     method: "POST",
-    //     headers: {
-    //       Accept: "application/json",
-    //       "Content-Type": "application/json"
-    //     },
-    //     body: JSON.stringify({
-    //       jsonrpc: "2.0",
-    //       method: "call",
-    //       params: {
-    //         db: db,
-    //         login: this.state.username,
-    //         password: this.state.password,
-    //         context: {}
-    //       },
-    //       id: this.state.ranDomId
-    //     })
-    //   })
-    //     .then(response => response.json())
-    //     .then(responseJson => {
-    //       // console.log(responseJson)
-    //       if (responseJson.error) {
-    //         this.setState({
-    //           error: true
-    //         });
-    //         return;
-    //       }
-    //       this.setState({
-    //         session_id: responseJson.result.session_id
-    //       });
-    //       AsyncStorage.setItem(
-    //         "username",
-    //         this.state.username.toLowerCase().trim()
-    //       );
-    //       AsyncStorage.setItem("password", this.state.password);
-    //       this.props.navigation.navigate("Home_Page", {
-    //         domainName: this.state.domainName.toLowerCase().trim(),
-    //         username: this.state.username.toLowerCase().trim(),
-    //         password: this.state.password,
-    //         session_id: this.state.session_id
-    //       });
-    //     })
-    //     .catch(error => {
-    //       // console.error(error)
-    //       this.setState({
-    //         error: true
-    //       });
-    //     });
-    // }
-  };
-
   render() {
     const navigation = this.props.navigation;
     return (
@@ -145,11 +96,25 @@ class LoginForm extends Component {
         <StatusBar barStyle="light-content" />
         <ImageBackground source={bg} style={styles.background}>
           <Content contentContainerStyle={{ flex: 1 }}>
-            <View style={styles.container}>
-              <Image source={logo} style={styles.logo} />
+            <View
+              style={{
+                alignItems: "center",
+                paddingTop: 40,
+                paddingBottom: 30
+              }}
+            >
+              <Text style={styles.header}>登录</Text>
+              <Icon name="gg" style={{ fontSize: 50, color: "white" }} />
             </View>
             <View style={styles.container}>
               <View style={styles.form}>
+                <Field
+                  name="db"
+                  component={this.renderInput}
+                  type="text"
+                  validate={[required]}
+                />
+
                 <Field
                   name="username"
                   component={this.renderInput}
@@ -160,7 +125,7 @@ class LoginForm extends Component {
                   name="password"
                   component={this.renderInput}
                   type="password"
-                  validate={[alphaNumeric, minLength8, maxLength15, required]}
+                  validate={[alphaNumeric, minLength1, maxLength15, required]}
                 />
 
                 <Button
@@ -169,9 +134,7 @@ class LoginForm extends Component {
                   block
                   large
                   style={styles.loginBtn}
-                  onPress={this.props.handleSubmit(vals => {
-                    this.login(vals);
-                  })}
+                  onPress={this.props.handleSubmit(this._submit)}
                 >
                   <Text
                     style={
@@ -191,21 +154,15 @@ class LoginForm extends Component {
     );
   }
 }
+const mapStateToProps = state => {
+  return {
+    is_loading: state.login_reducer.is_loading
+  };
+};
 
 const Login = reduxForm({
   form: "login"
 })(LoginForm);
-// Decorate with connect to read form values
-const selector = formValueSelector("login"); // <-- same as form name
-Login = connect(state => {
-  // can select values individually
-  const username = selector(state, "username");
-  const password = selector(state, "password");
-  return {
-    username,
-    password,
-    initialValues: { username, password }
-  };
-})(Login);
 
+Login = connect(mapStateToProps)(Login);
 export default Login;

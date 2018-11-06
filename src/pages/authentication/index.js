@@ -1,31 +1,12 @@
 // @flow
+import { Button, Container, Content, Footer, Input, Item, Spinner, Text, View } from "native-base";
 import React, { Component } from "react";
-import { Image, ImageBackground, StatusBar, AsyncStorage } from "react-native";
+import { StatusBar } from "react-native";
+import Icon from "react-native-vector-icons/FontAwesome";
 import { connect } from "react-redux";
-
-import {
-  Container,
-  Content,
-  Text,
-  Button,
-  // Icon,
-  Item,
-  Input,
-  View,
-  Toast,
-  Footer,
-  Keyboard,
-  Spinner
-} from "native-base";
-import Icon from 'react-native-vector-icons/FontAwesome';
-import {
-  Field,
-  reduxForm,
-  formValueSelector,
-  SubmissionError
-} from "redux-form";
+import { Field, reduxForm } from "redux-form";
+import { checkServer } from "./actions";
 import styles from "./styles";
-import { checkServer, setDomain } from "./actions";
 
 const required = value => (value ? undefined : "不可为空");
 
@@ -56,7 +37,7 @@ class AuthenticationForm extends Component {
     // alert('Keyboard Hidden');
   }
 
-  _onSubmit = (vals, dispatch) => {
+  _submit = (vals, dispatch) => {
     const server_url = vals.server_url;
     return dispatch(checkServer(server_url, this.props.navigation));
   };
@@ -65,7 +46,7 @@ class AuthenticationForm extends Component {
     return (
       <View>
         <Item error={error && touched} rounded style={styles.inputGrp}>
-          <Icon name="link" size={20} style={{color: "#fff" }} />
+          <Icon name="link" size={20} style={{ color: "#fff" }} />
           <Input
             placeholderTextColor="#FFF"
             style={styles.input}
@@ -109,10 +90,7 @@ class AuthenticationForm extends Component {
               alignItems: "center"
             }}
           >
-            <Icon
-              name="server"
-              style={{ fontSize: 50,color: "white" }}
-            />
+            <Icon name="server" style={{ fontSize: 50, color: "white" }} />
           </View>
           <View style={styles.forgotPasswordContainer}>
             <Field
@@ -120,7 +98,6 @@ class AuthenticationForm extends Component {
               component={this.renderInput}
               type="text"
               validate={[required]}
-              disabled={this.props.is_checking}
               placeholder="设置服务器地址"
             />
             {this.props.is_checking ? (
@@ -130,8 +107,7 @@ class AuthenticationForm extends Component {
                 rounded
                 block
                 bordered
-                onPress={this.props.handleSubmit(this._onSubmit)}
-                disabled={this.props.is_checking}
+                onPress={this.props.handleSubmit(this._submit)}
                 style={styles.emailBtn}
               >
                 <Text style={{ color: "#FFF" }}>确定</Text>
@@ -154,9 +130,6 @@ class AuthenticationForm extends Component {
 const mapStateToProps = state => {
   return {
     is_checking: state.auth_reducer.is_checking,
-    initialValues: {
-      server_url: state.auth_reducer.domain_name
-    }
   };
 };
 const Authentication = reduxForm({
