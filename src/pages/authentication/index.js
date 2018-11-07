@@ -1,7 +1,17 @@
 // @flow
-import { Button, Container, Content, Footer, Input, Item, Spinner, Text, View } from "native-base";
+import {
+  Button,
+  Container,
+  Content,
+  Footer,
+  Input,
+  Item,
+  Spinner,
+  Text,
+  View
+} from "native-base";
 import React, { Component } from "react";
-import { StatusBar } from "react-native";
+import { StatusBar,ImageBackground } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
 import { connect } from "react-redux";
 import { Field, reduxForm } from "redux-form";
@@ -78,50 +88,50 @@ class AuthenticationForm extends Component {
     return (
       <Container>
         <StatusBar barStyle="light-content" />
-        {/* <ImageBackground
-          source={require("../../assets/images/bg-signup.png")}
+        <ImageBackground
+          source={require("../../assets/images/application-switcher-bg.jpg")}
           style={styles.background}
-        > */}
-        <Content padder scrollEnabled={false}>
-          <Text style={styles.forgotPasswordHeader}>设置服务器</Text>
-          <View
+        >
+          <Content padder scrollEnabled={false}>
+            <Text style={styles.forgotPasswordHeader}>设置服务器</Text>
+            <View
+              style={{
+                flex: 1,
+                alignItems: "center"
+              }}
+            >
+              <Icon name="server" style={{ fontSize: 50, color: "white" }} />
+            </View>
+            <View style={styles.forgotPasswordContainer}>
+              <Field
+                name="server_url"
+                component={this.renderInput}
+                type="text"
+                validate={[required]}
+                placeholder="设置服务器地址"
+              />
+              {this.props.is_checking ? (
+                <Spinner />
+              ) : (
+                <Button
+                  rounded
+                  block
+                  bordered
+                  onPress={this.props.handleSubmit(this._submit)}
+                  style={styles.emailBtn}
+                >
+                  <Text style={{ color: "#FFF" }}>确定</Text>
+                </Button>
+              )}
+            </View>
+          </Content>
+          <Footer
             style={{
-              flex: 1,
-              alignItems: "center"
+              paddingLeft: 20,
+              paddingRight: 20
             }}
-          >
-            <Icon name="server" style={{ fontSize: 50, color: "white" }} />
-          </View>
-          <View style={styles.forgotPasswordContainer}>
-            <Field
-              name="server_url"
-              component={this.renderInput}
-              type="text"
-              validate={[required]}
-              placeholder="设置服务器地址"
-            />
-            {this.props.is_checking ? (
-              <Spinner color="red" />
-            ) : (
-              <Button
-                rounded
-                block
-                bordered
-                onPress={this.props.handleSubmit(this._submit)}
-                style={styles.emailBtn}
-              >
-                <Text style={{ color: "#FFF" }}>确定</Text>
-              </Button>
-            )}
-          </View>
-        </Content>
-        <Footer
-          style={{
-            paddingLeft: 20,
-            paddingRight: 20
-          }}
-        />
-        {/* </ImageBackground> */}
+          />
+        </ImageBackground>
       </Container>
     );
   }
@@ -129,7 +139,7 @@ class AuthenticationForm extends Component {
 
 const mapStateToProps = state => {
   return {
-    is_checking: state.auth_reducer.is_checking,
+    is_checking: state.auth_reducer.is_checking
   };
 };
 const Authentication = reduxForm({

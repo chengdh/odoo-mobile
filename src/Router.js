@@ -1,6 +1,6 @@
 import React from 'react'
 import { StackNavigator } from 'react-navigation'
-import Home from './pages/home/Home'
+import Home from './pages/home'
 import Authentication from './pages/authentication'
 import Login from './pages/login'
 

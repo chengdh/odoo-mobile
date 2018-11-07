@@ -37,3 +37,9 @@ export default class Home extends Component {
 
 const styles = StyleSheet.create({
 });
+const mapStateToProps = state => {
+  return {
+    domain_name : state.login_reducer.domain_name
+  }
+}
+

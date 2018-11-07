@@ -2,7 +2,9 @@ import color from "color";
 
 import { Platform, Dimensions, PixelRatio } from "react-native";
 
-const primary = "#01cca1";
+// const primary = "#01cca1";
+
+const primary = "#c9a8a9";
 
 const deviceHeight = Dimensions.get("window").height;
 const deviceWidth = Dimensions.get("window").width;
@@ -102,7 +104,8 @@ module.exports = {
 
   // Color
   brandPrimary: primary,
-  brandSecondary: "#00c497",
+  // brandSecondary: "#00c497",
+  brandSecondary: primary,
   brandInfo: "#62B1F6",
   brandSuccess: "#5cb85c",
   brandDanger: "#d9534f",

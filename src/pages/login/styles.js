@@ -1,6 +1,7 @@
 const React = require("react-native");
 const { Dimensions, Platform } = React;
 const commonColor = require("../../theme/variables/commonColor");
+const primary = require("../../theme/variables/commonColor").brandPrimary;
 
 const deviceHeight = Dimensions.get("window").height;
 
@@ -9,7 +10,7 @@ export default {
     flex: 1,
     width: null,
     height: deviceHeight,
-    backgroundColor: "rgba(0,0,0,0.1)"
+    backgroundColor: primary
   },
   container: {
     flex: 1,

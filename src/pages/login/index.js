@@ -4,6 +4,7 @@ import {
   Content,
   Input,
   Item,
+  Spinner,
   Text,
   View
 } from "native-base";
@@ -42,7 +43,7 @@ class LoginForm extends Component {
     function getIcon(fieldName) {
       let iconName;
       if (fieldName === "username") iconName = "user";
-      else if (fieldName === "password") iconname = "unlock";
+      else if (fieldName === "password") iconName = "unlock";
       else iconName = "database";
       const icon = (
         <Icon active size={20} name={iconName} style={{ color: "#fff" }} />
@@ -90,11 +91,13 @@ class LoginForm extends Component {
   }
 
   render() {
-    const navigation = this.props.navigation;
     return (
       <Container>
         <StatusBar barStyle="light-content" />
-        <ImageBackground source={bg} style={styles.background}>
+        <ImageBackground
+          source={require("../../assets/images/application-switcher-bg.jpg")}
+          style={styles.background}
+        >
           <Content contentContainerStyle={{ flex: 1 }}>
             <View
               style={{
@@ -127,25 +130,27 @@ class LoginForm extends Component {
                   type="password"
                   validate={[alphaNumeric, minLength1, maxLength15, required]}
                 />
-
-                <Button
-                  rounded
-                  primary
-                  block
-                  large
-                  style={styles.loginBtn}
-                  onPress={this.props.handleSubmit(this._submit)}
-                >
-                  <Text
-                    style={
-                      Platform.OS === "android"
-                        ? { fontSize: 16, textAlign: "center", top: -5 }
-                        : { fontSize: 16, fontWeight: "900" }
-                    }
+                {this.props.is_loading ? (
+                  <Spinner />
+                ) : (
+                  <Button
+                    rounded
+                    block
+                    large
+                    style={styles.loginBtn}
+                    onPress={this.props.handleSubmit(this._submit)}
                   >
-                    登录系统
-                  </Text>
-                </Button>
+                    <Text
+                      style={
+                        Platform.OS === "android"
+                          ? { fontSize: 16, textAlign: "center", top: -5 }
+                          : { fontSize: 16, fontWeight: "900" }
+                      }
+                    >
+                      登录系统
+                    </Text>
+                  </Button>
+                )}
               </View>
             </View>
           </Content>
