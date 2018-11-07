@@ -136,15 +136,20 @@ class LoginForm extends Component {
                   <Button
                     rounded
                     block
-                    large
+                    bordered
                     style={styles.loginBtn}
                     onPress={this.props.handleSubmit(this._submit)}
                   >
                     <Text
                       style={
                         Platform.OS === "android"
-                          ? { fontSize: 16, textAlign: "center", top: -5 }
-                          : { fontSize: 16, fontWeight: "900" }
+                          ? {
+                              color: "#FFF",
+                              fontSize: 16,
+                              textAlign: "center",
+                              top: -5
+                            }
+                          : { color: "#FFF", fontSize: 16, fontWeight: "900" }
                       }
                     >
                       登录系统

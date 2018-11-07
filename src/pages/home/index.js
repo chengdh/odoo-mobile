@@ -1,8 +1,13 @@
-import { Container } from "native-base";
+import { Container, Content } from "native-base";
 import React, { Component } from "react";
-import { Platform, StyleSheet, WebView,StatusBar } from "react-native";
+import {
+  Platform,
+  ImageBackground,
+  StatusBar,
+  StyleSheet,
+  WebView
+} from "react-native";
 import { connect } from "react-redux";
-
 
 class Home extends Component {
   onNavigationStateChange = navState => {
@@ -23,10 +28,9 @@ class Home extends Component {
     return (
       <Container>
         <StatusBar barStyle="light-content" />
-
         <WebView
           source={{ uri: this.props.url }}
-          onNavigationStateChange={this.onNavigationStateChange.bind(this)}
+          onNavigationStateChange={this.onNavigationStateChange}
           startInLoadingState={true}
           style={{
             marginTop: Platform.OS === "ios" ? 20 : 0
