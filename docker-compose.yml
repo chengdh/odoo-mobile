@@ -10,6 +10,7 @@ services:
       - 3001:3001
       - 19000:19000
       - 19001:19001
+      - 8081:8081
     command: npm start -- --reset-cache
     volumes:
       - .:/react-native-starter-kit

@@ -4,5 +4,7 @@
     "name": "odoo11 mobile",
     "slug": "odoo11-mobile",
     "privacy": "public"
-  }
+  },
+  "name": "odoomobile",
+  "displayName": "odoo-mobile"
 }

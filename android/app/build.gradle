@@ -72,13 +72,15 @@ import com.android.build.OutputFile
  * ]
  */
 
- project.ext.vectoricons = [
-    iconFontNames: [ 'MaterialIcons.ttf', 'EvilIcons.ttf', 'FontAwesome.ttf' ] // Name of the font files you want to copy
+project.ext.react = [
+        bundleInDebug: true,
+]
+project.ext.vectoricons = [
+        iconFontNames: ['MaterialIcons.ttf', 'EvilIcons.ttf', 'FontAwesome.ttf'] // Name of the font files you want to copy
 ]
 
 apply from: "../../node_modules/react-native/react.gradle"
 apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
-
 
 /**
  * Set this to true to create two separate APKs instead of one:
@@ -96,17 +98,22 @@ def enableSeparateBuildPerCPUArchitecture = false
 def enableProguardInReleaseBuilds = false
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion '28.0.2'
+    compileSdkVersion 26
+    buildToolsVersion '28.0.3'
 
     defaultConfig {
-        applicationId "com.wcloudapp"
+        applicationId "com.doo"
         minSdkVersion 16
-        targetSdkVersion 22
+        targetSdkVersion 26
         versionCode 1
         versionName "1.0"
         ndk {
             abiFilters "armeabi-v7a", "x86"
+        }
+    }
+    android {
+        lintOptions {
+            abortOnError false
         }
     }
     splits {
@@ -128,7 +135,7 @@ android {
         variant.outputs.each { output ->
             // For each separate APK per architecture, set a unique version code as described here:
             // http://tools.android.com/tech-docs/new-build-system/user-guide/apk-splits
-            def versionCodes = ["armeabi-v7a":1, "x86":2]
+            def versionCodes = ["armeabi-v7a": 1, "x86": 2]
             def abi = output.getFilter(OutputFile.ABI)
             if (abi != null) {  // null for the universal-debug, universal-release variants
                 output.versionCodeOverride =
@@ -141,6 +148,7 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:appcompat-v7:23.0.1'
+
     compile 'com.facebook.react:react-native:+'
     // From node_modules
     compile project(':react-native-vector-icons')

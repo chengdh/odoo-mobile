@@ -1,4 +1,4 @@
-package com.wcloudapp;
+package com.odoo;
 
 import android.app.Application;
 
