@@ -7,14 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		004932BC8CA04D60935C8806 /* rubicon-icon-font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 40C3D697CF1C47F0AD0BAC0C /* rubicon-icon-font.ttf */; };
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
 		00C302E81ABCBA2D00DB3ED1 /* libRCTImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302C01ABCB91800DB3ED1 /* libRCTImage.a */; };
 		00C302E91ABCBA2D00DB3ED1 /* libRCTNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302DC1ABCB9D200DB3ED1 /* libRCTNetwork.a */; };
 		00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302E41ABCB9EE00DB3ED1 /* libRCTVibration.a */; };
 		00E356F31AD99517003FC87E /* WcloudAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* WcloudAppTests.m */; };
-		1197EF7BA34E4C0E97A73676 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 23E010B6187F450BA28AF09E /* Foundation.ttf */; };
 		133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C398B91ACF4ADC00677621 /* libRCTLinking.a */; };
 		139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139105C11AF99BAD00B5F7CC /* libRCTSettings.a */; };
 		139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139FDEF41B06529B00C62182 /* libRCTWebSocket.a */; };
@@ -26,8 +24,6 @@
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		188161D0166B4B09B367699B /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1A0E227075A4CE5AE98AF3E /* Ionicons.ttf */; };
 		18C8CC71127143CABAAEBAAE /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 667CEC5D7C3B4CEBB04288D2 /* FontAwesome.ttf */; };
-		1D4B4D85CFA3419EBF1FDED9 /* Roboto_medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F88DC72FBD14018A571D437 /* Roboto_medium.ttf */; };
-		2AAEF8EF06B441F388BB32F5 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C34C674B365B44F2A2D86B2E /* Octicons.ttf */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
@@ -40,28 +36,18 @@
 		2D02E4C81E0B4AEC006451C7 /* libRCTWebSocket-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3E991DF850E9000B6D8A /* libRCTWebSocket-tvOS.a */; };
 		2D02E4C91E0B4AEC006451C7 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3EA31DF850E9000B6D8A /* libReact.a */; };
 		2DCD954D1E0B4F2C00145EB5 /* WcloudAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* WcloudAppTests.m */; };
-		30B636D8CCB84EF28580E134 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C26389E534334D18A2C24769 /* Ionicons.ttf */; };
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
-		5FD6512C9DF643529459DF86 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F436A9107E704D378281491B /* EvilIcons.ttf */; };
-		6DB8B374A3AB40608D293704 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E91004FE5F148688418518A /* MaterialIcons.ttf */; };
-		78E91E060C7E4EAF8D7D0CE5 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 372E2EAA7F3E4371B79CACAA /* Zocial.ttf */; };
 		7DC5A5F104254525950F2DDF /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8D5EDED5D2BD4D58A7694623 /* EvilIcons.ttf */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		9725459875F54DA1BE9AF5F5 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B549F2184B7E42DDB9A1D189 /* Zocial.ttf */; };
 		A24A8A7CDFD54BF2B78011F1 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 74564A4E154E4FABBAC4A14E /* Octicons.ttf */; };
-		AB542662A11E4818800A4B9D /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0D293414F61E46C6BD81A957 /* Entypo.ttf */; };
 		AC2A4AF443ED49F8907E9757 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE39AE5D8AA344BF969EAAF6 /* Foundation.ttf */; };
-		B127864A2053CF4200897118 /* LaunchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = B12786492053CF4200897118 /* LaunchImage.png */; };
 		BE0B342F8490468997890206 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DA1459AAC484C06B7AE2535 /* Entypo.ttf */; };
-		BF773542F02042C6A2C802A1 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 762B13F953F34849B961FDA3 /* SimpleLineIcons.ttf */; };
-		C02C35859F994BE5B657FB5E /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6649B5C5E78E458082A2EF90 /* FontAwesome.ttf */; };
 		C81FE8285BB94C8085B92907 /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7731E897D348467189E04664 /* libRNVectorIcons.a */; };
 		D16612FB2E5D457F9A352C4C /* libRCTWKWebView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D524F04BCBC14A55A75B1D10 /* libRCTWKWebView.a */; };
-		D9C595035A4D48019485A33B /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E04DD1255E94339B14C49B0 /* Feather.ttf */; };
 		DCEB813305EF4DB69F56F703 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E1BD2D850D9E49FCA34A4F58 /* MaterialIcons.ttf */; };
 		DE91D611B3194BF2BB498B55 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B53623FA7EF64392B1454F82 /* MaterialCommunityIcons.ttf */; };
 		FF74C4AB9E734AB384AF704E /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 69977CF71E25445F8AF59F1C /* SimpleLineIcons.ttf */; };
-		FF8F603C4C4C4E73A1CDE860 /* Roboto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59586F87832E4385B23127AA /* Roboto.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -310,20 +296,6 @@
 			remoteGlobalIDString = 3DBE0D0D1F3B181C0099AA32;
 			remoteInfo = "fishhook-tvOS";
 		};
-		D3525726219443D4006163C3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = EBF21BDC1FC498900052F4D5;
-			remoteInfo = jsinspector;
-		};
-		D3525728219443D4006163C3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = EBF21BFA1FC4989A0052F4D5;
-			remoteInfo = "jsinspector-tvOS";
-		};
 		D352572A219443D4006163C3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
@@ -554,8 +526,6 @@
 				3DAD3EAB1DF850E9000B6D8A /* libcxxreact.a */,
 				3DAD3EAD1DF850E9000B6D8A /* libjschelpers.a */,
 				3DAD3EAF1DF850E9000B6D8A /* libjschelpers.a */,
-				D3525727219443D4006163C3 /* libjsinspector.a */,
-				D3525729219443D4006163C3 /* libjsinspector-tvOS.a */,
 				B166E22F20124CCB002FDE60 /* libthird-party.a */,
 				B166E23120124CCB002FDE60 /* libthird-party.a */,
 				B166E23320124CCB002FDE60 /* libdouble-conversion.a */,
@@ -779,17 +749,20 @@
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = ZC3H8887XS;
+						DevelopmentTeam = ZC5M979F3G;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
+					};
+					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = ZC5M979F3G;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = ZC3H8887XS;
+						DevelopmentTeam = ZC5M979F3G;
 						ProvisioningStyle = Automatic;
 					};
 					2D02E48F1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = ZC3H8887XS;
+						DevelopmentTeam = ZC5M979F3G;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 2D02E47A1E0B4A5D006451C7;
 					};
@@ -1102,20 +1075,6 @@
 			remoteRef = D3525713219443D4006163C3 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		D3525727219443D4006163C3 /* libjsinspector.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libjsinspector.a;
-			remoteRef = D3525726219443D4006163C3 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D3525729219443D4006163C3 /* libjsinspector-tvOS.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libjsinspector-tvOS.a";
-			remoteRef = D3525728219443D4006163C3 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		D352572B219443D4006163C3 /* libprivatedata.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1144,24 +1103,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B127864A2053CF4200897118 /* LaunchImage.png in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
-				AB542662A11E4818800A4B9D /* Entypo.ttf in Resources */,
-				5FD6512C9DF643529459DF86 /* EvilIcons.ttf in Resources */,
-				C02C35859F994BE5B657FB5E /* FontAwesome.ttf in Resources */,
-				1197EF7BA34E4C0E97A73676 /* Foundation.ttf in Resources */,
-				30B636D8CCB84EF28580E134 /* Ionicons.ttf in Resources */,
-				6DB8B374A3AB40608D293704 /* MaterialIcons.ttf in Resources */,
-				2AAEF8EF06B441F388BB32F5 /* Octicons.ttf in Resources */,
-				1D4B4D85CFA3419EBF1FDED9 /* Roboto_medium.ttf in Resources */,
-				FF8F603C4C4C4E73A1CDE860 /* Roboto.ttf in Resources */,
-				004932BC8CA04D60935C8806 /* rubicon-icon-font.ttf in Resources */,
-				BF773542F02042C6A2C802A1 /* SimpleLineIcons.ttf in Resources */,
-				78E91E060C7E4EAF8D7D0CE5 /* Zocial.ttf in Resources */,
 				BE0B342F8490468997890206 /* Entypo.ttf in Resources */,
 				7DC5A5F104254525950F2DDF /* EvilIcons.ttf in Resources */,
-				D9C595035A4D48019485A33B /* Feather.ttf in Resources */,
 				18C8CC71127143CABAAEBAAE /* FontAwesome.ttf in Resources */,
 				AC2A4AF443ED49F8907E9757 /* Foundation.ttf in Resources */,
 				188161D0166B4B09B367699B /* Ionicons.ttf in Resources */,
@@ -1288,7 +1233,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = ZC3H8887XS;
+				DEVELOPMENT_TEAM = ZC5M979F3G;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -1320,7 +1265,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
-				DEVELOPMENT_TEAM = ZC3H8887XS;
+				DEVELOPMENT_TEAM = ZC5M979F3G;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)..\node_modules\neact-native-wkwebview-reborniosRCTWKWebView",
@@ -1350,7 +1295,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = ZC5M979F3G;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)..\node_modules\neact-native-wkwebview-reborniosRCTWKWebView",
@@ -1363,7 +1308,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.w360s.wcloudapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.odoo.app;
 				PRODUCT_NAME = WcloudApp;
 				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1376,7 +1321,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = ZC5M979F3G;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)..\node_modules\neact-native-wkwebview-reborniosRCTWKWebView",
@@ -1389,7 +1334,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.w360s.wcloudapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.odoo.app;
 				PRODUCT_NAME = WcloudApp;
 				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1406,7 +1351,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = ZC3H8887XS;
+				DEVELOPMENT_TEAM = ZC5M979F3G;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				HEADER_SEARCH_PATHS = (
@@ -1425,7 +1370,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.WcloudApp-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.odoo.OdooApp-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -1444,7 +1389,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = ZC3H8887XS;
+				DEVELOPMENT_TEAM = ZC5M979F3G;
 				GCC_NO_COMMON_BLOCKS = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1462,7 +1407,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.WcloudApp-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.odoo.OdooApp-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -1479,7 +1424,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = ZC3H8887XS;
+				DEVELOPMENT_TEAM = ZC5M979F3G;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "WcloudApp-tvOSTests/Info.plist";
@@ -1507,7 +1452,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = ZC3H8887XS;
+				DEVELOPMENT_TEAM = ZC5M979F3G;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "WcloudApp-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
