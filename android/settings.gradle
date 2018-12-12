@@ -1,4 +1,4 @@
-rootProject.name = 'odoo-mobile'
+rootProject.name = 'WcloudApp'
 
 include ':app'
 include ':react-native-vector-icons'
