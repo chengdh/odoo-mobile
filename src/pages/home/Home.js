@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { StyleSheet, Text, View, WebView, Platform } from 'react-native'
+import { StyleSheet, Text, View, WebView, Platform,BackHandler } from 'react-native'
 
 export default class Home extends Component {
 
