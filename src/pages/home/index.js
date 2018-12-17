@@ -5,7 +5,8 @@ import {
   ImageBackground,
   StatusBar,
   StyleSheet,
-  WebView
+  WebView,
+  BackHandler
 } from "react-native";
 import { connect } from "react-redux";
 
@@ -30,6 +31,7 @@ class Home extends Component {
         <StatusBar barStyle="light-content" />
         <WebView
           source={{ uri: this.props.url }}
+          ref={(c) => this._webView = c}
           onNavigationStateChange={this.onNavigationStateChange}
           startInLoadingState={true}
           style={{
@@ -39,6 +41,17 @@ class Home extends Component {
       </Container>
     );
   }
+  componentDidMount() {
+    BackHandler.addEventListener('hardwareBackPress', this.backHandler);
+  }
+  componentWillUnmount() {
+    BackHandler.removeEventListener('hardwareBackPress', this.backHandler);
+  }
+  backHandler = () => {
+    this._webView.goBack();
+    return true;
+  }
+
 }
 
 const styles = StyleSheet.create({});
