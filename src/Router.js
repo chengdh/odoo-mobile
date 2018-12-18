@@ -1,10 +1,10 @@
 import React from 'react'
-import { StackNavigator } from 'react-navigation'
+import { createStackNavigator } from 'react-navigation'
 import Home from './pages/home'
 import Authentication from './pages/authentication'
 import Login from './pages/login'
 
-export const HomeStack = StackNavigator({
+export const HomeStack = createStackNavigator({
     Authentication_Page: {
         screen: Authentication,
         navigationOptions: {

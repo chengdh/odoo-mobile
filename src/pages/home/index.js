@@ -6,13 +6,40 @@ import {
   StatusBar,
   StyleSheet,
   WebView,
-  BackHandler
+  BackHandler,
+  ToastAndroid,
+  Alert
 } from "react-native";
 import { connect } from "react-redux";
+import { webViewNavStateChange } from "./actions";
 
 class Home extends Component {
+  _didFocusSubscription;
+  _willBlurSubscription;
+
+  constructor(props) {
+    super(props);
+    this._didFocusSubscription = props.navigation.addListener('didFocus', payload =>
+      BackHandler.addEventListener('hardwareBackPress', this.onBackButtonPressAndroid)
+    );
+  }
+
+  componentDidMount() {
+    this._willBlurSubscription = this.props.navigation.addListener('willBlur', payload =>
+      BackHandler.removeEventListener('hardwareBackPress', this.onBackButtonPressAndroid)
+    );
+  }
+
+  componentWillUnmount() {
+    this._didFocusSubscription && this._didFocusSubscription.remove();
+    this._willBlurSubscription && this._willBlurSubscription.remove();
+  }
   onNavigationStateChange = navState => {
     let domain = "http://" + this.props.domain_name + "/web";
+    const onStateChange = this.props.onWebViewNavStateChange;
+    onStateChange(navState);
+
+    ToastAndroid.show('onNavigationStateChange !', ToastAndroid.SHORT);
     if (navState.url.indexOf("logout") > -1) {
       this.backToLogin();
       this.setState({ url: "about:blank" });
@@ -41,26 +68,35 @@ class Home extends Component {
       </Container>
     );
   }
-  componentDidMount() {
-    BackHandler.addEventListener('hardwareBackPress', this.backHandler);
-  }
-  componentWillUnmount() {
-    BackHandler.removeEventListener('hardwareBackPress', this.backHandler);
-  }
-  backHandler = () => {
-    this._webView.goBack();
-    return true;
-  }
 
+  onBackButtonPressAndroid = () => {
+    ToastAndroid.show(' call backHandler!', ToastAndroid.LONG);
+    if (this.props.webview_state.url == this.props.url) {
+      return false;
+    }
+    else {
+
+      this._webView.goBack();
+      return true;
+    }
+  }
 }
 
 const styles = StyleSheet.create({});
 const mapStateToProps = state => {
   return {
+    webview_state: state.home_reducer,
     domain_name: state.auth_reducer.domain_name,
     url: "http://" + state.auth_reducer.domain_name + "/web#home"
   };
 };
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onWebViewNavStateChange: (navState) => {
+      dispatch(webViewNavStateChange(navState))
+    }
+  }
+};
 
-Home = connect(mapStateToProps)(Home);
+Home = connect(mapStateToProps, mapDispatchToProps)(Home);
 export default Home;
