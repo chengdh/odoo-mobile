@@ -1,7 +1,6 @@
 package com.odoo;
 
 import com.facebook.react.ReactActivity;
-import com.facebook.react.ReactInstanceManager;
 
 public class MainActivity extends ReactActivity {
 
