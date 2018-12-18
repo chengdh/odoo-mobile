@@ -6,7 +6,7 @@ import {
   StatusBar,
   StyleSheet,
   WebView,
-  BackHandler,
+  BackAndroid,
   ToastAndroid,
   Alert
 } from "react-native";
@@ -20,13 +20,13 @@ class Home extends Component {
   constructor(props) {
     super(props);
     this._didFocusSubscription = props.navigation.addListener('didFocus', payload =>
-      BackHandler.addEventListener('hardwareBackPress', this.onBackButtonPressAndroid)
+      BackAndroid.addEventListener('hardwareBackPress', this.onBackButtonPressAndroid)
     );
   }
 
   componentDidMount() {
     this._willBlurSubscription = this.props.navigation.addListener('willBlur', payload =>
-      BackHandler.removeEventListener('hardwareBackPress', this.onBackButtonPressAndroid)
+      BackAndroid.removeEventListener('hardwareBackPress', this.onBackButtonPressAndroid)
     );
   }
 
