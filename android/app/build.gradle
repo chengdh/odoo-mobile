@@ -72,12 +72,12 @@ import com.android.build.OutputFile
  * ]
  */
 
-//project.ext.react = [
-//        bundleInDebug: true,
-//]
 project.ext.react = [
-        entryFile: "index.js"
+        bundleInDebug: true,
 ]
+//project.ext.react = [
+//        entryFile: "index.js"
+//]
 project.ext.vectoricons = [
         iconFontNames: ['MaterialIcons.ttf', 'EvilIcons.ttf', 'FontAwesome.ttf'] // Name of the font files you want to copy
 ]
