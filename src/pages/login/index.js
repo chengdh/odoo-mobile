@@ -170,7 +170,7 @@ const mapStateToProps = state => {
   };
 };
 
-const Login = reduxForm({
+let Login = reduxForm({
   form: "login"
 })(LoginForm);
 

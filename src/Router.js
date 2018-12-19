@@ -1,12 +1,12 @@
 import React from 'react'
 import { createStackNavigator } from 'react-navigation'
 import Home from './pages/home'
-import Authentication from './pages/authentication'
+import AuthenticationScreen from './pages/authentication'
 import Login from './pages/login'
 
 export const HomeStack = createStackNavigator({
     Authentication_Page: {
-        screen: Authentication,
+        screen: AuthenticationScreen,
         navigationOptions: {
             header: null,
         },

@@ -142,9 +142,9 @@ const mapStateToProps = state => {
     is_checking: state.auth_reducer.is_checking
   };
 };
-const Authentication = reduxForm({
+let Authentication = reduxForm({
   form: "Authentication"
 })(AuthenticationForm);
-Authentication = connect(mapStateToProps)(Authentication);
+Authentication= connect(mapStateToProps)(Authentication);
 
 export default Authentication;
