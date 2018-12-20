@@ -1,10 +1,9 @@
-import { START_LOGIN, SET_LOGIN, STOP_LOGIN } from "./action_constants";
+import { START_LOGIN, SET_LOGIN, STOP_LOGIN, LOGOUT } from "./action_constants";
 const LoginReducer = (
   state = {
-    domain_name: "192.168.104.199:8070",
-    username: "admin",
-    password: "admin",
-    is_loading: false
+    domain_name: "kairuiwuliu.com:8070",
+    is_loading: false,
+    is_logged: false
   },
   action
 ) => {
@@ -16,10 +15,17 @@ const LoginReducer = (
         session_id: action.session_id,
         username: action.username,
         password: action.password,
-        is_loading: false
+        db: action.db,
+        is_loading: false,
+        is_logged: true
       };
     case STOP_LOGIN:
       return { is_loading: false };
+    case LOGOUT:
+      return {
+        is_logged: false,
+        is_loading: false
+      };
     default:
       return state;
   }

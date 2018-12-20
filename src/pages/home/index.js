@@ -2,16 +2,14 @@ import { Container, Content } from "native-base";
 import React, { Component } from "react";
 import {
   Platform,
-  ImageBackground,
   StatusBar,
   StyleSheet,
   WebView,
-  BackHandler,
-  ToastAndroid,
-  Alert
+  BackHandler
 } from "react-native";
 import { connect } from "react-redux";
-import { webViewNavStateChange } from "./actions";
+import { webViewNavStateChange} from "./actions";
+import { logout} from "../login/actions";
 
 class Home extends Component {
   _didFocusSubscription;
@@ -34,21 +32,21 @@ class Home extends Component {
     this._didFocusSubscription && this._didFocusSubscription.remove();
     this._willBlurSubscription && this._willBlurSubscription.remove();
   }
-  onNavigationStateChange = navState => {
+  onNavigationStateChange = (navState) => {
     let domain = "http://" + this.props.domain_name + "/web";
     const onStateChange = this.props.onWebViewNavStateChange;
     onStateChange(navState);
 
-    ToastAndroid.show('onNavigationStateChange !', ToastAndroid.SHORT);
     if (navState.url.indexOf("logout") > -1) {
       this.backToLogin();
       this.setState({ url: "about:blank" });
-    } else if (navState.url == domain + "/login#home") {
+    } else if (navState.url == (domain + "/login#home")) {
       navState.url = domain + "#home";
     }
   };
 
-  backToLogin() {
+  backToLogin = () => {
+    this.props.logout();
     this.props.navigation.navigate("Authentication_Page", {});
   }
 
@@ -70,12 +68,10 @@ class Home extends Component {
   }
 
   onBackButtonPressAndroid = () => {
-    ToastAndroid.show(' call backHandler!', ToastAndroid.LONG);
     if (this.props.webview_state.url == this.props.url) {
       return false;
     }
     else {
-
       this._webView.goBack();
       return true;
     }
@@ -85,7 +81,7 @@ class Home extends Component {
 const styles = StyleSheet.create({});
 const mapStateToProps = state => {
   return {
-    webview_state: state.home_reducer,
+    webview_state: state.home_reducer.nav_state,
     domain_name: state.auth_reducer.domain_name,
     url: "http://" + state.auth_reducer.domain_name + "/web#home"
   };
@@ -94,6 +90,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     onWebViewNavStateChange: (navState) => {
       dispatch(webViewNavStateChange(navState))
+    },
+    logout: () => {
+      dispatch(logout());
     }
   }
 };

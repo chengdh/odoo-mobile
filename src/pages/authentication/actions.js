@@ -13,6 +13,7 @@ export function checkServer(server_url, nav) {
     if (server_url != "") {
       dispatch({ type: "CHECKING_DOMAIN_NAME" });
       return fetch(url, {
+        credentials: 'include',
         method: "POST",
         headers: {
           Accept: "application/json",

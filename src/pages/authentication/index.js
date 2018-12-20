@@ -11,7 +11,7 @@ import {
   View
 } from "native-base";
 import React, { Component } from "react";
-import { StatusBar,ImageBackground } from "react-native";
+import { StatusBar, ImageBackground } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
 import { connect } from "react-redux";
 import { Field, reduxForm } from "redux-form";
@@ -37,7 +37,7 @@ class AuthenticationForm extends Component {
     // this.keyboardDidHideListener.remove();
   }
 
-  componentDidMount() {}
+  componentDidMount() { }
 
   _keyboardDidShow() {
     // alert('Keyboard Shown');
@@ -72,14 +72,14 @@ class AuthenticationForm extends Component {
               name="close"
             />
           ) : (
-            <Text />
-          )}
+              <Text />
+            )}
         </Item>
         {touched && error ? (
           <Text style={styles.formErrorText1}>{error}</Text>
         ) : (
-          <Text style={styles.formErrorText2}>错误</Text>
-        )}
+            <Text style={styles.formErrorText2}>错误</Text>
+          )}
       </View>
     );
   }
@@ -113,16 +113,16 @@ class AuthenticationForm extends Component {
               {this.props.is_checking ? (
                 <Spinner />
               ) : (
-                <Button
-                  rounded
-                  block
-                  bordered
-                  onPress={this.props.handleSubmit(this._submit)}
-                  style={styles.emailBtn}
-                >
-                  <Text style={{ color: "#FFF" }}>确定</Text>
-                </Button>
-              )}
+                  <Button
+                    rounded
+                    block
+                    bordered
+                    onPress={this.props.handleSubmit(this._submit)}
+                    style={styles.emailBtn}
+                  >
+                    <Text style={{ color: "#FFF" }}>确定</Text>
+                  </Button>
+                )}
             </View>
           </Content>
           <Footer
@@ -139,12 +139,13 @@ class AuthenticationForm extends Component {
 
 const mapStateToProps = state => {
   return {
-    is_checking: state.auth_reducer.is_checking
+    is_checking: state.auth_reducer.is_checking,
+    initialValues: { server_url: "kairuiwuliu.com:8070" }
   };
 };
 let Authentication = reduxForm({
   form: "Authentication"
 })(AuthenticationForm);
-Authentication= connect(mapStateToProps)(Authentication);
+Authentication = connect(mapStateToProps)(Authentication);
 
 export default Authentication;

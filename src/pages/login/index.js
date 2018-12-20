@@ -166,7 +166,8 @@ class LoginForm extends Component {
 }
 const mapStateToProps = state => {
   return {
-    is_loading: state.login_reducer.is_loading
+    is_loading: state.login_reducer.is_loading,
+    initialValues: {db: "qydb"}
   };
 };
 

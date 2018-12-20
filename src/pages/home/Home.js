@@ -10,17 +10,16 @@ export default class Home extends Component {
     }
   }
 
-  onNavigationStateChange(navState) {
+  onNavigationStateChange =(navState) => {
     let domain = 'http://' + this.props.navigation.state.params.domainName + '/web'
     if (navState.url.indexOf('logout') > -1) {
       this.backToLogin()
-      this.setState({ url: 'about:blank' })
     } else if (navState.url == (domain + '/login#home')) {
       navState.url = domain + '#home'
     }
   }
 
-  backToLogin() {
+  backToLogin =() => {
     this.props.navigation.navigate('Authentication_Page', {});
   }
 

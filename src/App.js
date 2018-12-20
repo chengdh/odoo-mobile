@@ -1,12 +1,14 @@
 import { Root } from "native-base";
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import { StyleSheet, Text, View } from "react-native";
-import { HomeStack } from "./Router";
+import getHomeStack from "./Router";
 
 console.disableYellowBox = true;
 
-export default class App extends Component {
+class App extends Component {
   render() {
+    const HomeStack = getHomeStack(this.props.is_logged);
     return (
       <Root>
         <HomeStack />
@@ -14,6 +16,14 @@ export default class App extends Component {
     );
   }
 }
+const mapStateToProps = state => {
+    return {
+        is_logged: state.login_reducer.is_logged
+    };
+};
+
+App = connect(mapStateToProps)(App);
+export default App;
 
 const styles = StyleSheet.create({
   container: {

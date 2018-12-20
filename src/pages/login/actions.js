@@ -1,6 +1,11 @@
 import { SubmissionError } from "redux-form";
 import { START_LOGIN, SET_LOGIN, STOP_LOGIN } from "./action_constants";
 
+export const logout = () => {
+    return {
+        type: "LOGOUT"
+    }
+}
 export const login = (username, password, db, nav) => {
   return (dispatch, getState) => {
     const domainName = getState().auth_reducer.domain_name;
@@ -15,6 +20,7 @@ export const login = (username, password, db, nav) => {
     });
 
     return fetch(url, {
+      credentials: 'include',
       method: "POST",
       headers: {
         Accept: "application/json",

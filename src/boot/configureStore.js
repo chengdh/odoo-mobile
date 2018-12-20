@@ -7,14 +7,14 @@ import storage from 'redux-persist/lib/storage'
 
 import reducer from "../reducers";
 
-// const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const persistConfig = {
   key: 'root',
-  storage,
+  storage
 }
 
 const persistedReducer = persistReducer(persistConfig, reducer);
-const enhancer = compose(applyMiddleware(thunk));
+const enhancer = composeEnhancers(applyMiddleware(thunk));
 export default function configureStore(onCompletion) {
 
   const store = createStore(persistedReducer, enhancer);

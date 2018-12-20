@@ -4,7 +4,7 @@ export default (HomeReducer = (
 ) => {
   switch (action.type) {
     case "WEB_VIEW_NAV_STATE_CHANGE":
-      return action.nav_state;
+      return {nav_state: action.nav_state};
     default:
       return state;
   }
